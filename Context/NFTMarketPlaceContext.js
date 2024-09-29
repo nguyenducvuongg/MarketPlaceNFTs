@@ -5,6 +5,7 @@ import Router from 'next/router';
 import { NFTMarketPlaceAddress, NFTMarketPlaceABI } from './Constants';
 import axios from 'axios';
 import { create as ipfsHttpClient } from 'ipfs-http-client';
+import { useTranslation } from 'react-i18next';
 
 // const client = ipfsHttpClient('https://ipfs.infura.io:5001/api/v0');
 
@@ -50,7 +51,8 @@ const connectingWithSmartContract = async () => {
 export const NFTMarketPlaceContext = React.createContext();
 
 export const NFTMarketPlaceProvider = ({ children }) => {
-    const titleData = "Discover, collect, and sell";
+    const { t } = useTranslation();
+    const titleData = `${t('text')}`;
     const [currentAccount, setCurrentAccount] = useState('');
 
     /**

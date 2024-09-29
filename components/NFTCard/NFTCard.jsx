@@ -5,6 +5,7 @@ import img from '../../img';
 import { AiFillFire,AiFillHeart,AiOutlineHeart } from "react-icons/ai";
 import{BsImages} from "react-icons/bs";
 import {Button} from '../ConponentsIndex';
+import { useTranslation } from 'react-i18next';
 
 const NFTCard = () => {
 

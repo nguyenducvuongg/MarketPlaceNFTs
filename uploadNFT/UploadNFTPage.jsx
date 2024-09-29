@@ -70,7 +70,7 @@ const UploadNFTPage = ({uploadToIPFS,createNFT}) => {
         fileSize={fileSize}
         category={category}
         properties={properties}
-        // setImage={setImage}
+        setImage={setImage}
         uploadToIPFS={uploadToIPFS}
       />
       <div className={styles.upload_box}>
@@ -175,14 +175,14 @@ const UploadNFTPage = ({uploadToIPFS,createNFT}) => {
               createNFT(
                 name,
                 description,
-               
+                image,
                 price,
                 router,
-                // category,
-                // website,
-                // royalties,
-                // fileSize,
-                // properties
+                category,
+                website,
+                royalties,
+                fileSize,
+                properties
               )
             } 
             classStyle={styles.upload_btn_style}/>
