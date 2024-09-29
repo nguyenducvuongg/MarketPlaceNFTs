@@ -1,0 +1,100 @@
+.fillter{
+    margin: 4rem 0;
+    width: 100%;
+}
+
+.fillter_box{
+    width: 80%;
+    margin: 0 auto;
+    font-display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom:4rem ;
+}
+
+.fillter_box_left{
+    display: flex;
+    gap: 2rem;
+}
+
+.fillter_box_left button{
+    border: none;
+    outline: none;
+    padding: 1rem 1.5rem;
+    border-radius: 2rem;
+    border: 1px solid var(--main-bg-color);
+    transition: all .3s ease-in;
+    cursor: pointer;
+    font-size: 1.3rem;
+}
+
+.fillter_box_left button:hover{
+    box-shadow: var(--box-shadow);
+    color: var(--icons-color);
+    border: 1px solid var(--icons-color);
+}
+
+.fillter_box_right_box{
+    background-color: var(--main-bg-color);
+    color: var(--icons-color);
+    border: 1px solid var(--icons-color);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    box-shadow: var(--box-shadow);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.fillter_box_items{
+    padding: 2rem;
+    width: 80%;
+    display: flex;
+    border-top: 1px solid var(--icons-light-color);
+    margin: 0 auto;
+    justify-content: space-around;
+}
+
+.fillter_box_items_box{
+    display: flex;
+    align-items: center;
+    gap: 1rem;  
+}
+
+.fillter_box_items_box_item{
+    background-color: var(--icons-color);
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+    color: var(--main-bg-color);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.fillter_box_items_box_item_trans{
+    border: 1px solid var(--icons-color);
+    color: var(--icons-color);
+    padding: .5rem 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+@media screen and (min-device-width: 320px) and (max-device-width: 425px) {
+    .fillter_box{
+        display: grid;
+        gap: 4rem;
+    }
+    .fillter_box_left{
+        gap: 1rem;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .fillter_box_left button{
+        font-size: 2rem;
+    }
+}
