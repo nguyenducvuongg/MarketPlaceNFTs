@@ -1,8 +1,9 @@
 .navbar{
     width: 100%;
     padding-block: 1.5rem;
-    position: relative;
+    position: fixed;
     z-index: 111111111;
+    
 }
 
 .navbar_container{
@@ -11,15 +12,15 @@
     display: grid;
     grid-template-columns: repeat(2,1fr);
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 1rem;
+    border-radius: 25px;
+    background-color: transparent;
 }
 
 .navbar_container_left{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
     align-items: center;
-
+    padding-left: 13px;
 }
 
 .navbar_container_left_box_input_box{
@@ -103,20 +104,48 @@
     cursor: pointer;
 }
 
-.sideBar{
-    position: fixed;
-    top: 0;
-    width: 24rem;
-    background-color: var(--main-bg-color);
-    box-shadow: var(--box-shadow);
-    height: 100vh;
-    overflow-y: auto;
-    display: none;
-    z-index: 11111;
+.navbar_container_right_button Button{
+    background-color: #FFFFFF;
+    color: #4C5773;
 }
 
-.sideBar::-webkit-scrollbar{
-    display: none;
+.navbar_container_right_button Button:hover{
+    background-color: #4C5773;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
+}
+
+.active{
+    background-color: #4C5773;
+}
+
+
+
+.language_select {
+    display: flex;    
+    align-items: center;    
+    gap: 0.5rem;
+}
+
+.language_label {    
+    font-size: 1rem;    
+    font-weight: 500;    
+    color: var(--text-color);
+}
+
+.language_dropdown {    
+    padding: 0.5rem 1rem;    
+    border: 1px solid var(--icons-color);    
+    border-radius: 0.5rem;    
+    background-color: var(--main-bg-color);    
+    color: var(--text-color);    
+    font-size: 1rem;    
+    cursor: pointer;
+}
+
+.language_option {    
+    background-color: var(--main-bg-color);    
+    color: var(--text-color);
 }
 
 @media  screen and (min-width: 320px) and (max-width: 768px) {

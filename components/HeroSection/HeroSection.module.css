@@ -1,6 +1,7 @@
 .heroSection{
     width: 80%;
-    margin: 3rem auto;
+    margin: 0 auto;
+    padding-top: 10rem ;
 }
 
 .heroSection_box{

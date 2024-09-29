@@ -26,6 +26,12 @@ const resources = {
       Filter: 'Filter',
       images: 'Images',
       Creators: 'Creators',
+      RemainingTimes : 'Remaining Times',
+      CurrentBid : 'Current Bid',
+      BuyNow: 'Buy Now',
+      Collection: 'Collection',
+      AuctionTiming: 'Auction Timing',
+      PlaceBid: 'Place Bid',
     }
   },
   vi: {
@@ -51,6 +57,12 @@ const resources = {
       Filter: 'Bộ lọc',
       images: 'Hình ảnh',
       Creators: 'Nhà sáng tạo',
+      RemainingTimes : 'Thời gian còn lại',
+      CurrentBid : 'Giá bán',
+      BuyNow: 'Mua ngay',
+      Collection: 'Bộ sưu tập',
+      AuctionTiming: 'Thời gian bán',
+      PlaceBid: 'Đặt ',
     }
   }
 };

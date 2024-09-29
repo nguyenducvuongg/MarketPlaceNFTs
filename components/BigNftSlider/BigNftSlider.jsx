@@ -6,9 +6,13 @@ import { Button } from '../ConponentsIndex';
 import { AiFillFire,AiFillHeart,AiOutlineHeart } from "react-icons/ai";
 import { MdVerified, MdTimer } from "react-icons/md";
 import { TbArrowBigLeftLine, TbArrowBigRightLine } from "react-icons/tb";
+import { TiArrowSortedUp,TiArrowSortedDown } from "react-icons/ti";
+import { useTranslation } from 'react-i18next';
 
 
 const BigNftSlider = () => {
+
+    const {t} = useTranslation();
 
   const [idNumber, setIdNumber] = useState(1);
 
@@ -108,26 +112,26 @@ const BigNftSlider = () => {
                     <div className={styles.bigNftSlider_box_left_creator_profile}>
                         <Image className={styles.bigNftSlider_box_left_creator_profile_img} src={sliderData[idNumber].creatorImage} alt='creator' width={50} height={50} />
                         <div className={styles.bigNftSlider_box_left_creator_profile_img}>
-                            <p>creator</p>
+                            <p>{t('Creators')}</p>
                             <h4>{sliderData[idNumber].name}<span><MdVerified /></span></h4>
                         </div>
                     </div>
                     <div className={styles.bigNftSlider_box_left_creator_collection}>
                         <AiFillFire className={styles.bigNftSlider_box_left_creator_collection_icon} />
                         <div className={styles.bigNftSlider_box_left_creator_collection_info}>
-                            <p>Collection</p>
+                            <p>{t('Collection')}</p>
                             <h4>{sliderData[idNumber].title}</h4>
                         </div>
                     </div>
                 </div>
                 <div className={styles.bigNftSlider_box_left_bidding}>
                     <div className={styles.bigNftSlider_box_left_bidding_box}>
-                        <small>Current Bid</small>
+                        <small>{t('CurrentBid')}</small>
                         <p>{sliderData[idNumber].price}<span>$22,221</span></p>
                     </div>
                     <p className={styles.bigNftSlider_box_left_bidding_box_auction}>
                         <MdTimer className={styles.bigNftSlider_box_left_bidding_box_auction_icon} />
-                        <span>Auction ending in</span> 
+                        <span>{t('AuctionTiming')}</span> 
                     </p>
                     <div className={styles.bigNftSlider_box_left_bidding_box_timer}>
                         <div className={styles.bigNftSlider_box_left_bidding_box_timer_item}>
@@ -148,8 +152,8 @@ const BigNftSlider = () => {
                         </div>
                     </div>
                     <div className={styles.bigNftSlider_box_left_button}>
-                        <Button btnName='Buy now' handleClick={()=>{}}/>
-                        <Button btnName='Place Bid' handleClick={()=>{}}/>
+                        <Button btnName={t('BuyNow')} handleClick={()=>{}}/>
+                        <Button btnName={t('PlaceBid')} handleClick={()=>{}}/>
                     </div>
                 </div>
                 <div className={styles.bigNftSlider_box_left_sliderBtn}>

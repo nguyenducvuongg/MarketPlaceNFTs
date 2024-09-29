@@ -40,34 +40,34 @@ const Navbar = () => {
       setProfileShow(false);
     }
   };
-
-  const openNotification = () => {
-    setNotificationShow(!notificationShow);
-    setDiscoverShow(false);
-    setHelpCenterShow(false);
-    setProfileShow(false);
-  };
-
-  const openProfile = () => {
-    setProfileShow(!profileShow);
-    setDiscoverShow(false);
-    setHelpCenterShow(false);
-    setNotificationShow(false);
-  };
-
-  const openSideBar = () => {
-    setOpenSideMenu(!openSideMenu);
-  };
-
   const { currentAccount, connectWallet } = useContext(NFTMarketPlaceContext);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
 
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <div className={styles.navbar}>
-      <div className={styles.navbar_container}>
+      <div className={`${styles.navbar_container} ${isScrolled ? styles.active : ''}`} >
         <div className={styles.navbar_container_left}>
           <Link href="/">
             <div className={styles.logo}>
@@ -77,16 +77,16 @@ const Navbar = () => {
         </div>
 
         <div className={styles.navbar_container_right}>
-          <div className={styles.navbar_container_right_button}>
-            <label htmlFor="language-select">{t('language')}:</label>
-            <select id="language-select" onChange={(e) => changeLanguage(e.target.value)}>
-              <option value="en">English</option>
-              <option value="vi">Tiếng Việt</option>
+          <div className={styles.navbar_container_right}>
+            <label className={styles.language_select} htmlFor="language-select">{t('language')}:</label>
+            <select id="language-select" className={styles.language_dropdown} onChange={(e) => changeLanguage(e.target.value)}>
+              <option value="en" className={styles.language_option}>English</option>
+              <option value="vi" className={styles.language_option}>Tiếng Việt</option>
             </select>
           </div>
 
           <Link href="/SearchPage">
-            <div className={styles.navbar_container_right_button}>
+            <div className={`${styles.navbar_container_right_button} ${isScrolled ? styles.activeBtn : ''}`}>
               <Button btnName={t('search')} handleClick={() => {}} />
             </div>
           </Link>

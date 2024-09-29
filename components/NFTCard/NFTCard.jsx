@@ -9,6 +9,8 @@ import { useTranslation } from 'react-i18next';
 
 const NFTCard = () => {
 
+    const {t} = useTranslation();
+
     const featureArray = [1,2,3,4,5,6,7,8,9]
     const [like, setLike] = useState(false)
     const likeNft = () => {
@@ -34,7 +36,7 @@ const NFTCard = () => {
                     </div>
                     <div className={styles.NFTCard_box_update_right}>
                         <div className={styles.NFTCard_box_update_right_info}>
-                            <small>Remaining Times</small>
+                            <small>{t('RemainingTimes')}</small>
                             <p>3h : 20m</p>
                         </div>
                     </div>
@@ -45,11 +47,11 @@ const NFTCard = () => {
                             <h4>#djkfh</h4>
                             <div className={styles.NFTCard_box_update_detail_price_box_box}>
                                 <div className={styles.NFTCard_box_update_detail_price_box_box_bid}>
-                                    <small>Current Bid</small>
+                                    <small>{t('CurrentBid')}</small>
                                     <p>1000.00ETH</p>
                                 </div>
                                 <div className={styles.NFTCard_box_update_detail_price_box_stock}>
-                                    <Button btnName='Buy Now' className={styles.NFTCard_box_update_detail_price_box_box_btn}/>
+                                    <Button btnName={t('BuyNow')} className={styles.NFTCard_box_update_detail_price_box_box_btn}/>
                                 </div>
                                 
                             </div>
